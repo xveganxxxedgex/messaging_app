@@ -1,0 +1,45 @@
+.contacts {
+  padding: 20px;
+  flex: 0 0 40%;
+
+  @media screen and (max-width: 768px) {
+    flex: 1 0 100%;
+  }
+
+  .contacts-header {
+    padding: 0 10px 10px;
+    margin-top: 0;
+    text-align: center;
+    border-bottom: 1px solid #9f9f9f;
+  }
+
+  .contacts-list {
+    overflow: auto;
+  }
+
+  .no-contacts {
+    text-align: center;
+    align-self: center;
+    align-items: center;
+  }
+
+  .contact {
+    flex-shrink: 0;
+
+    .contact-name, .contact-messages {
+      display: inline-block;
+    }
+
+    .contact-name {
+      overflow: hidden;
+      text-overflow: ellipsis;
+      white-space: nowrap;
+      max-width: 80%;
+      vertical-align: inherit;
+    }
+
+    .contact-messages {
+      margin-left: 5px;
+    }
+  }
+}

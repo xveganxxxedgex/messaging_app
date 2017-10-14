@@ -1,0 +1,128 @@
+.contacts {
+  padding: 20px;
+  -webkit-box-flex: 0;
+      -ms-flex: 0 0 40%;
+          flex: 0 0 40%;
+}
+@media screen and (max-width: 768px) {
+  .contacts {
+    -webkit-box-flex: 1;
+        -ms-flex: 1 0 100%;
+            flex: 1 0 100%;
+  }
+}
+.contacts .contacts-header {
+  padding: 0 10px 10px;
+  margin-top: 0;
+  text-align: center;
+  border-bottom: 1px solid #9f9f9f;
+}
+.contacts .contacts-list {
+  overflow: auto;
+}
+.contacts .no-contacts {
+  text-align: center;
+  -ms-flex-item-align: center;
+      align-self: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+.contacts .contact {
+  -ms-flex-negative: 0;
+      flex-shrink: 0;
+}
+.contacts .contact .contact-name,
+.contacts .contact .contact-messages {
+  display: inline-block;
+}
+.contacts .contact .contact-name {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  max-width: 80%;
+  vertical-align: inherit;
+}
+.contacts .contact .contact-messages {
+  margin-left: 5px;
+}
+.messages {
+  padding: 20px;
+}
+.messages .history {
+  overflow: auto;
+}
+.messages .history .no-messages {
+  padding: 20px;
+  text-align: center;
+  -ms-flex-item-align: center;
+      align-self: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+.messages .history .message {
+  width: 80%;
+  -ms-flex-negative: 0;
+      flex-shrink: 0;
+  white-space: pre-line;
+}
+.messages .history .message.incoming {
+  background-color: #ffd9be;
+  border-color: #ffbb8b;
+  -ms-flex-item-align: start;
+      align-self: flex-start;
+}
+.messages .history .message.outgoing {
+  background-color: #eaeaea;
+  border-color: #d1d1d1;
+  -ms-flex-item-align: end;
+      align-self: flex-end;
+}
+.messages .send-message {
+  min-height: 60px;
+  margin-top: 10px;
+}
+.messages .send-message .form-group {
+  margin: 0;
+}
+.messages .send-message .btn {
+  margin-left: 10px;
+  min-width: 60px;
+}
+.greeting {
+  text-align: center;
+  -ms-flex-item-align: center;
+      align-self: center;
+}
+html,
+body,
+#root,
+.app {
+  height: 100%;
+}
+.app {
+  width: 100%;
+}
+.flex {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+.flex-grow {
+  -webkit-box-flex: 1;
+      -ms-flex-positive: 1;
+          flex-grow: 1;
+}
+.flex-row {
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+}
+.flex-column {
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
