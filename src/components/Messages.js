@@ -99,8 +99,11 @@ export default class Chat extends Component {
 
   sendMessage() {
     const { match: { params: { contactId } } } = this.props;
-    sendMessage(contactId, this.state.newMessage);
-    this.setState({ newMessage: '' });
+
+    if (this.state.newMessage && this.state.newMessage.trim()) {
+      sendMessage(contactId, this.state.newMessage);
+      this.setState({ newMessage: '' });
+    }
   }
 
   render() {
