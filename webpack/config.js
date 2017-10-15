@@ -27,7 +27,7 @@ var config = {
   entry: entry,
   output: {
     path: path.resolve(pkg.config.buildDir),
-    publicPath: '/',
+    publicPath: './',
     filename: path.join('assets', 'js', '[name].js'),
     pathinfo: false
   },
