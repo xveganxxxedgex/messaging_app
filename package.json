@@ -2,7 +2,7 @@
   "name": "messaging-app",
   "version": "1.0.0",
   "description": "A simple proof-of-concept example of a messaging app using ReactJS",
-  "main": "./index.js",
+  "main": "./src/index.js",
   "repository": {
     "type": "git",
     "url": "git@github.com:xveganxxxedgex/messaging_app.git"

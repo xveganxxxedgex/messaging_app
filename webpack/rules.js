@@ -6,7 +6,7 @@ var DEBUG = process.env.NODE_ENV === 'development',
     TEST = process.env.NODE_ENV === 'test';
 
 var RULES = {
-  // Return URLs for the JS files
+  // Return URLs for the files
   file: 'file-loader?name=[path][name].[ext]',
   // Transpile ES6 to be browser compatible
   jsx: ['babel-loader']

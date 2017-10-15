@@ -27,7 +27,7 @@ if (DEBUG) {
 
 if (PROD) {
   plugins.push(
-    // Generate CSS files from the LESS files imported into components
+    // Generate CSS files from the LESS files
     new ExtractTextPlugin({
       filename: path.join('assets', 'css', '[name].css'),
       allChunks: true
