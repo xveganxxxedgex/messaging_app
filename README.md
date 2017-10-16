@@ -2,6 +2,8 @@
 
 This is a proof-of-concept project showcasing a simple chatting application.
 
+[See Live Demo](https://xveganxxxedgex.github.io/messaging_app/)
+
 This project meets the following criteria:
 
 - Sample/mock API responses to load contact list, messages and POSTing a new message.
