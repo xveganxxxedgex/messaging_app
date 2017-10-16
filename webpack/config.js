@@ -27,13 +27,13 @@ var config = {
   entry: entry,
   output: {
     path: path.resolve(pkg.config.buildDir),
-    publicPath: './',
+    publicPath: '/',
     filename: path.join('assets', 'js', '[name].js'),
     pathinfo: false
   },
   module: {
     rules: rules,
-    noParse: /\.min\.js/
+    // noParse: /\.min\.js/ // React v16 min file needs to be compiled, so parse min files for now
   },
   plugins: plugins,
   resolve: {

@@ -60,7 +60,7 @@ if (!TEST) {
         return module.context && module.context.indexOf('node_modules') !== -1;
       }
     }),
-    // Our code has it's own source
+    // Webpack bootstrapping logic can go into its own chunk
     new webpack.optimize.CommonsChunkPlugin({
       name: 'manifest'
     }),
