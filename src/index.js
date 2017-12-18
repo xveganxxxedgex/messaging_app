@@ -4,10 +4,14 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import { Router, Route } from 'react-router-dom';
 import createBrowserHistory from 'history/createBrowserHistory';
+import { root } from 'baobab-react/higher-order';
 const history = createBrowserHistory();
 
 import App from './components/App';
 
+import tree from './state';
+
+@root(tree)
 class Root extends React.Component {
   render() {
     return (

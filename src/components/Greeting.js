@@ -1,5 +1,8 @@
 import React, { Component } from 'react';
 import moment from 'moment';
+import _isEqual from 'lodash/isEqual';
+
+import { syncRouteParams } from '../actions';
 
 import '../less/Greeting.less';
 
@@ -18,6 +21,17 @@ export default class Greeting extends Component {
       { time: this.afternoonStart, greeting: 'Afternoon' },
       { time: this.eveningStart, greeting: 'Evening' }
     ];
+  }
+
+  componentWillMount() {
+    syncRouteParams(this.props.match.params);
+  }
+
+  componentWillReceiveProps(nextProps) {
+    // If route params changed, update them in the state
+    if (!_isEqual(nextProps.match.params, this.props.match.params)) {
+      syncRouteParams(nextProps.match.params);
+    }
   }
 
   getGreeting() {

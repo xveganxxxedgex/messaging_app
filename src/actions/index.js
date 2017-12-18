@@ -111,6 +111,7 @@ export function sendMessage(contactId, message) {
   const cursor = tree.select(['messages', 'data']);
   const user = tree.get(['user', 'data']);
 
+  // Reflect change immediately in interface
   cursor.push({
     text: message,
     id: cursor.get().length,
@@ -124,8 +125,14 @@ export function sendMessage(contactId, message) {
       api.handleUnsuccessfulRequest(resp);
       return resp.data;
     })
+    // No need for action on success, since message was already added to state
     .then()
     .catch(err => {
       setCursorError(cursor, err);
     });
+}
+
+export function syncRouteParams(params) {
+  const cursor = tree.select('routeParams');
+  cursor.set(params);
 }

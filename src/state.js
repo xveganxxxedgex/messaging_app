@@ -21,7 +21,8 @@ const state = new Baobab({
     loading: false,
     data: null,
     error: null
-  }
+  },
+  routeParams: {}
 });
 
 export default state;

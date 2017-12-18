@@ -2,9 +2,10 @@ import React, { Component } from 'react';
 import { branch } from 'baobab-react/higher-order';
 import { Button, FormGroup, FormControl, Well, Form } from 'react-bootstrap';
 import _debounce from 'lodash/debounce';
+import _isEqual from 'lodash/isEqual';
 import moment from 'moment';
 
-import { getMessages, sendMessage } from '../actions';
+import { getMessages, sendMessage, syncRouteParams } from '../actions';
 
 import '../less/Messages.less';
 
@@ -29,6 +30,8 @@ export default class Chat extends Component {
   componentWillMount() {
     const { match: { params: { contactId } } } = this.props;
 
+    syncRouteParams(this.props.match.params);
+
     if (contactId != undefined) {
       getMessages(contactId);
     }
@@ -41,6 +44,11 @@ export default class Chat extends Component {
     const {
       match: { params: { contactId: prevContactId } }
     } = this.props;
+
+    // If route params changed, update them in the state
+    if (!_isEqual(nextProps.match.params, this.props.match.params)) {
+      syncRouteParams(nextProps.match.params);
+    }
 
     if (contactId != prevContactId) {
       getMessages(contactId);

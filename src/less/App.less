@@ -4,6 +4,22 @@ html, body, #root, .app {
 
 .app {
   width: 100%;
+
+  @media screen and (max-width: 768px) {
+    &.on-chat-page {
+      // Hide contacts when chat on chat page on mobile
+      .contacts {
+        display: none;
+      }
+    }
+
+    &:not(.on-chat-page) {
+      // Hide messages/greeting when no chat is selected on mobile
+      .greeting, .messages {
+        display: none;
+      }
+    }
+  }
 }
 
 .flex {
