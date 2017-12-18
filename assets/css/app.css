@@ -104,6 +104,15 @@ body,
 .app {
   width: 100%;
 }
+@media screen and (max-width: 768px) {
+  .app.on-chat-page .contacts {
+    display: none;
+  }
+  .app:not(.on-chat-page) .greeting,
+  .app:not(.on-chat-page) .messages {
+    display: none;
+  }
+}
 .flex {
   display: -webkit-box;
   display: -ms-flexbox;
